@@ -3,10 +3,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{DCB5D745-525C-46A1-BFC0-E12F87AB6165}</ProjectGuid>
+    <ProjectGuid>{3264D50E-0161-4F46-A7EF-C487E43137E8}</ProjectGuid>
     <OutputType>Library</OutputType>
     <RootNamespace>System.Threading.Tasks.Net35</RootNamespace>
-    <AssemblyName>System.Threading.Tasks.Net35</AssemblyName>
+    <AssemblyName>System.Threading.Tasks.Net35Unity</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <ReleaseVersion>1.1</ReleaseVersion>
     <UseMSBuildEngine>False</UseMSBuildEngine>
@@ -34,6 +34,7 @@
     <DebugSymbols>true</DebugSymbols>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="NET20-35\Action35.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="System.Collections.Concurrent\BlockingCollection.cs" />
     <Compile Include="System.Collections.Concurrent\ConcurrentBag.cs" />

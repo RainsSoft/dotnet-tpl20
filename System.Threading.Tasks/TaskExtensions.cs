@@ -45,6 +45,21 @@ namespace System.Threading.Tasks
 
             return TaskExtensionsImpl.Unwrap(task);
         }
+
+        public static T Await<T>( Task<T> t) {
+            using(var mre = new ManualResetEventSlim()) {
+                t.ConfigureAwait(false).GetAwaiter().OnCompleted(mre.Set);
+                mre.Wait();
+                return t.Result;
+            }
+        }
+
+        public static void Await( Task t) {
+            using(var mre = new ManualResetEventSlim()) {
+                t.ConfigureAwait(false).GetAwaiter().OnCompleted(mre.Set);
+                mre.Wait();
+            }
+        }
     }
 #else
     public static class TaskExtensions
